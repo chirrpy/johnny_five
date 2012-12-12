@@ -11,7 +11,7 @@ class ButtonOnlyFileInput < SimpleForm::Inputs::CollectionInput
   def input
     input_html_options[:class] += ' file'
 
-    visible_button    = small_action_button "Choose File", :id => "#{object_underscored}_#{attribute_name}_choose_button", :class => 'choose_file_button', :view_template => template
+    visible_button    = small_action_button label_text, :id => "#{object_underscored}_#{attribute_name}_choose_button", :class => 'choose_file_button', :view_template => template
     file_input        = @builder.file_field    attribute_name,            input_html_options
     hidden_input      = @builder.hidden_field  "#{attribute_name}_cache"
     input_public_url  = object.send(attribute_name).url
